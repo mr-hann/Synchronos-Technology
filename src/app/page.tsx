@@ -150,12 +150,11 @@ export default function Home() {
               </div>
                <div>
                 <Image
-                  src="https://picsum.photos/600/400"
-                  alt="Cosmic art"
+                  src="https://storage.googleapis.com/aall-demos/gene-editing/hero-synchronos.jpg"
+                  alt="A person looking up at a galaxy, symbolizing humanity's future in space."
                   width={600}
-                  height={400}
+                  height={600}
                   className="rounded-lg object-cover shadow-2xl shadow-primary/20"
-                  data-ai-hint="cosmic art"
                 />
               </div>
             </div>
