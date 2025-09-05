@@ -9,7 +9,7 @@ export function Logo({ className }: { className?: string }) {
       height="40pt"
       viewBox="0 0 100 100"
       preserveAspectRatio="xMidYMid meet"
-      className={cn("text-primary", className)}
+      className={cn(className)}
     >
       <g transform="translate(50, 50)">
         <g stroke="currentColor" strokeWidth="4" fill="none" strokeLinecap="round" strokeLinejoin="round">
