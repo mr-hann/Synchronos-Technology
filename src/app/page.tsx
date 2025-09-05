@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowRight, Cpu, Dna, Rocket, Building2, Mail, MapPin, Phone, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { ArrowRight, Cpu, Dna, Rocket, Building2, Mail, MapPin, Phone, Facebook, Twitter, Instagram, Linkedin, Target, Lightbulb, ShieldCheck } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useForm } from 'react-hook-form';
@@ -76,6 +76,34 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="py-16 md:py-24 bg-background/70">
+          <div className="container px-4 md:px-6">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="space-y-4">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl font-headline">About Synchronos</h2>
+                <p className="text-muted-foreground md:text-xl/relaxed">
+                  Synchronos Technology was born from a singular, audacious idea: to guide humanity's evolution from a planetary species to a galactic civilization. Our mission is directly inspired by the Kardashev scale, a method of measuring a civilization's level of technological advancement.
+                </p>
+                 <Button asChild size="lg" variant="link" className="px-0 text-accent hover:text-accent/90">
+                  <Link href="/about">
+                    Read our full story <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+              </div>
+               <div>
+                <Image
+                  src="https://picsum.photos/600/400"
+                  alt="Cosmic art"
+                  width={600}
+                  height={400}
+                  className="rounded-lg object-cover shadow-2xl shadow-primary/20"
+                  data-ai-hint="cosmic art"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="py-16 md:py-24 bg-background">
           <div className="container px-4 md:px-6">
             <div className="mx-auto max-w-5xl text-center space-y-4 mb-12">
@@ -110,6 +138,13 @@ export default function Home() {
                 href="/roadmap#phase-4"
               />
             </div>
+            <div className="text-center mt-12">
+              <Button asChild size="lg">
+                <Link href="/roadmap">
+                  Explore The Full Roadmap <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+            </div>
           </div>
         </section>
 
@@ -135,13 +170,13 @@ export default function Home() {
                 <ContactInfo
                   icon={<Phone className="h-6 w-6 text-primary" />}
                   title="Call Us"
-                  content="+1 (555) 123-4567"
-                  href="tel:+15551234567"
+                  content="+234 816 258 7661"
+                  href="tel:+2348162587661"
                 />
                 <ContactInfo
                   icon={<MapPin className="h-6 w-6 text-primary" />}
                   title="Our Headquarters"
-                  content="1 Future Way, Smart City One, Earth"
+                  content="Port Harcourt, Rivers State, Nigeria"
                 />
                 <div className="pt-4">
                   <h3 className="font-headline text-xl font-semibold mb-4">Follow Us</h3>
