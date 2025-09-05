@@ -5,8 +5,8 @@ export function Logo({ className }: { className?: string }) {
     <svg
       version="1.0"
       xmlns="http://www.w3.org/2000/svg"
-      width="30pt"
-      height="30pt"
+      width="40pt"
+      height="40pt"
       viewBox="0 0 300.000000 300.000000"
       preserveAspectRatio="xMidYMid meet"
       className={cn("text-primary", className)}
