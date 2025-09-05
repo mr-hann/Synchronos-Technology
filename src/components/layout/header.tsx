@@ -25,7 +25,6 @@ export default function Header() {
       <div className="container flex h-14 max-w-screen-2xl items-center justify-between mx-auto px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2 font-bold text-lg">
           <Logo className="h-6 w-6" />
-          <span className="font-headline">Synchronos</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
@@ -52,7 +51,6 @@ export default function Header() {
               <div className="flex flex-col gap-6 p-6">
                 <Link href="/" className="flex items-center gap-2 font-bold text-lg" onClick={() => setIsMobileMenuOpen(false)}>
                   <Logo className="h-6 w-6" />
-                  <span className="font-headline">Synchronos</span>
                 </Link>
                 <nav className="flex flex-col gap-4">
                   {navLinks.map((link) => (

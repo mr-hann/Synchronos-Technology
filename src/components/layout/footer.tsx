@@ -9,7 +9,6 @@ export default function Footer() {
         <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
           <div className="flex items-center gap-2">
             <Logo className="h-6 w-6" />
-            <span className="text-lg font-bold font-headline">Synchronos Technology</span>
           </div>
           <p className="text-center text-sm text-muted-foreground">
             © {new Date().getFullYear()} Synchronos Technology. All rights reserved.
