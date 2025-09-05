@@ -1,0 +1,34 @@
+import Link from 'next/link';
+import { Facebook, Twitter, Instagram, Linkedin, Bot } from 'lucide-react';
+
+export default function Footer() {
+  return (
+    <footer className="border-t border-border/40">
+      <div className="container mx-auto max-w-screen-2xl px-4 py-8">
+        <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
+          <div className="flex items-center gap-2">
+            <Bot className="h-6 w-6 text-primary" />
+            <span className="text-lg font-bold font-headline">Synchronos Technology</span>
+          </div>
+          <p className="text-center text-sm text-muted-foreground">
+            © {new Date().getFullYear()} Synchronos Technology. All rights reserved.
+          </p>
+          <div className="flex items-center gap-4">
+            <Link href="#" aria-label="Facebook">
+              <Facebook className="h-5 w-5 text-muted-foreground transition-colors hover:text-primary" />
+            </Link>
+            <Link href="#" aria-label="Twitter">
+              <Twitter className="h-5 w-5 text-muted-foreground transition-colors hover:text-primary" />
+            </Link>
+            <Link href="#" aria-label="Instagram">
+              <Instagram className="h-5 w-5 text-muted-foreground transition-colors hover:text-primary" />
+            </Link>
+            <Link href="#" aria-label="LinkedIn">
+              <Linkedin className="h-5 w-5 text-muted-foreground transition-colors hover:text-primary" />
+            </Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
