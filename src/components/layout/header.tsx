@@ -11,7 +11,7 @@ const navLinks = [
   { href: '/about', label: 'About' },
   { href: '/roadmap', label: 'Roadmap' },
   { href: '/divisions', label: 'Divisions' },
-  { href: '/community', label: 'Community' },
+  { href: '/#community', label: 'Community' },
   { href: '/careers', label: 'Careers' },
   { href: '/#contact', label: 'Contact' },
 ];
@@ -21,7 +21,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-14 max-w-screen-2xl items-center justify-between">
+      <div className="container flex h-14 max-w-screen-2xl items-center justify-between mx-auto px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2 font-bold text-lg">
           <Bot className="h-6 w-6 text-primary" />
           <span className="font-headline">Synchronos</span>
