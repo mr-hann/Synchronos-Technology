@@ -13,7 +13,7 @@ const navLinks = [
   { href: '/divisions', label: 'Divisions' },
   { href: '/community', label: 'Community' },
   { href: '/careers', label: 'Careers' },
-  { href: '/contact', label: 'Contact' },
+  { href: '/#contact', label: 'Contact' },
 ];
 
 export default function Header() {
