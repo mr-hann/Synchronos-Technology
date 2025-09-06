@@ -71,23 +71,23 @@ export default function Home() {
                 className="object-cover opacity-20"
                 data-ai-hint="futuristic cityscape"
              />
-             <div className="absolute inset-0 bg-gradient-to-b from-background to-background/50"></div>
+             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-muted to-background"></div>
           </div>
           <div className="container relative z-10 px-4 md:px-6">
             <div className="mx-auto max-w-4xl space-y-6">
-              <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary">
+              <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary">
                 Driving Humanity Toward a Type 3 Civilization.
               </h1>
               <p className="text-lg md:text-xl text-foreground/80">
                 Synchronos Technology is building the future, from digital realms to the far reaches of space. We are dedicated to advancing our world through innovation, sustainability, and a shared vision for a multi-planetary existence.
               </p>
               <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-                <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 transition-transform duration-300 hover:scale-105">
+                <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-secondary hover:text-secondary-foreground transition-all duration-300 hover:scale-105 shadow-[0_0_20px_theme(colors.primary)] hover:shadow-[0_0_30px_theme(colors.secondary)]">
                   <Link href="/about">
                     Learn More <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground transition-transform duration-300 hover:scale-105">
+                <Button asChild size="lg" variant="secondary" className="transition-transform duration-300 hover:scale-105 shadow-[0_0_20px_theme(colors.secondary)] hover:shadow-[0_0_30px_#FFD700]">
                   <Link href="/#community">
                     Join the Movement
                   </Link>
@@ -97,15 +97,15 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="py-16 md:py-24 bg-background/70">
+        <section className="py-16 md:py-24 bg-background/70 backdrop-blur-sm">
           <div className="container px-4 md:px-6">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="space-y-4">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl font-headline">About Synchronos</h2>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl font-headline text-accent">About Synchronos</h2>
                 <p className="text-muted-foreground md:text-xl/relaxed">
                   Synchronos Technology was born from a singular, audacious idea: to guide humanity's evolution from a planetary species to a galactic civilization. Our mission is directly inspired by the Kardashev scale, a method of measuring a civilization's level of technological advancement.
                 </p>
-                 <Button asChild size="lg" variant="link" className="px-0 text-accent hover:text-accent/90">
+                 <Button asChild size="lg" variant="link" className="px-0 text-primary hover:text-secondary">
                   <Link href="/about">
                     Read our full story <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
@@ -117,7 +117,7 @@ export default function Home() {
                   alt="A person looking up at a galaxy, symbolizing humanity's future in space."
                   width={600}
                   height={600}
-                  className="rounded-lg object-cover shadow-2xl shadow-primary/20"
+                  className="rounded-lg object-cover shadow-2xl shadow-accent/20"
                 />
               </div>
             </div>
@@ -127,32 +127,32 @@ export default function Home() {
         <section className="py-16 md:py-24 bg-background">
           <div className="container px-4 md:px-6">
             <div className="mx-auto max-w-5xl text-center space-y-4 mb-12">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl font-headline">Our Grand Vision</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl font-headline text-accent">Our Grand Vision</h2>
               <p className="text-muted-foreground md:text-xl/relaxed">
                 We're not just building products; we're architecting the next era of human existence. Our roadmap is a multi-phase journey to elevate civilization, inspired by the Kardashev scale.
               </p>
             </div>
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
               <FeatureCard
-                icon={<Cpu className="h-8 w-8 text-primary" />}
+                icon={<Cpu className="h-8 w-8 text-secondary" />}
                 title="Phase One: Digital"
                 description="Laying the digital foundation for a connected world."
                 href="/roadmap#phase-1"
               />
               <FeatureCard
-                icon={<Dna className="h-8 w-8 text-primary" />}
+                icon={<Dna className="h-8 w-8 text-secondary" />}
                 title="Phase Two: IoT"
                 description="Connecting lives and cities with intelligent systems."
                 href="/roadmap#phase-2"
               />
               <FeatureCard
-                icon={<Building2 className="h-8 w-8 text-primary" />}
+                icon={<Building2 className="h-8 w-8 text-secondary" />}
                 title="Phase Three: Infrastructure"
                 description="Building smart cities and sustainable energy grids."
                 href="/roadmap#phase-3"
               />
               <FeatureCard
-                icon={<Rocket className="h-8 w-8 text-primary" />}
+                icon={<Rocket className="h-8 w-8 text-secondary" />}
                 title="Phase Four: Space"
                 description="Making humanity a multi-planetary species."
                 href="/roadmap#phase-4"
@@ -168,10 +168,10 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="community" className="py-16 md:py-24 bg-background/70">
+        <section id="community" className="py-16 md:py-24 bg-muted/70 backdrop-blur-sm">
           <div className="container mx-auto max-w-7xl px-4">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl font-headline mb-4">
+              <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl font-headline text-accent mb-4">
                 Join Our Ecosystem
               </h2>
               <p className="text-lg md:text-xl text-muted-foreground">
@@ -181,17 +181,17 @@ export default function Home() {
 
             <div className="grid lg:grid-cols-3 gap-8 mb-24">
               <CommunityCard
-                icon={<Code className="h-8 w-8 text-primary" />}
+                icon={<Code className="h-8 w-8 text-secondary" />}
                 title="Technology Training"
                 description="Master cutting-edge web technologies through our hands-on programs and build the skills for a future-proof career."
               />
               <CommunityCard
-                icon={<Rocket className="h-8 w-8 text-primary" />}
+                icon={<Rocket className="h-8 w-8 text-secondary" />}
                 title="Startup Incubation"
                 description="Have a world-changing idea? We provide the resources, funding, and ecosystem to turn your startup into a success story."
               />
               <CommunityCard
-                icon={<Users className="h-8 w-8 text-primary" />}
+                icon={<Users className="h-8 w-8 text-secondary" />}
                 title="Mentorship Network"
                 description="Connect with industry veterans, visionary founders, and technology experts who can guide you on your journey."
               />
@@ -200,7 +200,7 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:max-w-xl mx-auto">
               <Card className="bg-card/50 backdrop-blur-sm border-border/50">
                 <CardHeader>
-                  <CardTitle className="font-headline text-3xl">Become a Part of Synchronos</CardTitle>
+                  <CardTitle className="font-headline text-3xl text-secondary">Become a Part of Synchronos</CardTitle>
                   <CardDescription>Fill out the form below to express your interest in our programs.</CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -254,7 +254,7 @@ export default function Home() {
                           </FormItem>
                         )}
                       />
-                      <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">Submit Interest</Button>
+                      <Button type="submit" className="w-full" variant="secondary">Submit Interest</Button>
                     </form>
                   </Form>
                 </CardContent>
@@ -267,7 +267,7 @@ export default function Home() {
         <section id="contact" className="py-16 md:py-24">
           <div className="container mx-auto max-w-6xl px-4">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl font-headline mb-4">
+              <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl font-headline text-accent mb-4">
                 Get In Touch
               </h2>
               <p className="text-lg md:text-xl text-muted-foreground">
@@ -295,11 +295,11 @@ export default function Home() {
                   content="Port Harcourt, Rivers State, Nigeria"
                 />
                 <div className="pt-4">
-                  <h3 className="font-headline text-xl font-semibold mb-4">Follow Us</h3>
+                  <h3 className="font-headline text-xl font-semibold mb-4 text-secondary">Follow Us</h3>
                   <div className="flex items-center gap-6">
                     <Link href="#" aria-label="Facebook"><Facebook className="h-6 w-6 text-muted-foreground transition-colors hover:text-primary" /></Link>
-                    <Link href="#" aria-label="Twitter"><Twitter className="h-6 w-6 text-muted-foreground transition-colors hover:text-primary" /></Link>
-                    <Link href="#" aria-label="Instagram"><Instagram className="h-6 w-6 text-muted-foreground transition-colors hover:text-primary" /></Link>
+                    <Link href="#" aria-label="Twitter"><Twitter className="h-6 w-6 text-muted-foreground transition-colors hover:text-secondary" /></Link>
+                    <Link href="#" aria-label="Instagram"><Instagram className="h-6 w-6 text-muted-foreground transition-colors hover:text-accent" /></Link>
                     <Link href="#" aria-label="LinkedIn"><Linkedin className="h-6 w-6 text-muted-foreground transition-colors hover:text-primary" /></Link>
                   </div>
                 </div>
@@ -320,7 +320,7 @@ export default function Home() {
                     <FormField control={contactForm.control} name="message" render={({ field }) => (
                       <FormItem><FormLabel>Message</FormLabel><FormControl><Textarea placeholder="Your message..." rows={5} {...field} /></FormControl><FormMessage /></FormItem>
                     )} />
-                    <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">Send Message</Button>
+                    <Button type="submit" className="w-full" variant="secondary">Send Message</Button>
                   </form>
                 </Form>
               </div>
@@ -335,10 +335,10 @@ export default function Home() {
 function FeatureCard({ icon, title, description, href }: { icon: React.ReactNode; title: string; description: string; href: string }) {
   return (
     <Link href={href}>
-      <Card className="h-full transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 bg-card/50 backdrop-blur-sm border-border/50">
+      <Card className="h-full transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-secondary/20 bg-card/50 backdrop-blur-sm border-border/50">
         <CardHeader className="flex flex-row items-center gap-4">
           {icon}
-          <CardTitle className="font-headline">{title}</CardTitle>
+          <CardTitle className="font-headline text-primary">{title}</CardTitle>
         </CardHeader>
         <CardContent>
           <p className="text-muted-foreground">{description}</p>
@@ -354,7 +354,7 @@ function ContactInfo({ icon, title, content, href }: { icon: React.ReactNode; ti
     <div className="flex items-start gap-4">
       <div className="mt-1">{icon}</div>
       <div>
-        <h3 className="font-headline text-xl font-semibold">{title}</h3>
+        <h3 className="font-headline text-xl font-semibold text-secondary">{title}</h3>
         {href ? <Link href={href} className="hover:text-primary transition-colors">{contentEl}</Link> : contentEl}
       </div>
     </div>
@@ -367,7 +367,7 @@ function CommunityCard({ icon, title, description }: { icon: React.ReactNode; ti
       <div className="flex justify-center items-center mb-4">
         {icon}
       </div>
-      <h3 className="text-xl font-bold font-headline mb-2">{title}</h3>
+      <h3 className="text-xl font-bold font-headline mb-2 text-primary">{title}</h3>
       <p className="text-muted-foreground">{description}</p>
     </Card>
   )

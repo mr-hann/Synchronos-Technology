@@ -38,7 +38,8 @@ const phases = [
       "Heavy investment in solar, wind, and clean energy.",
       "Focus on energy efficiency and affordability.",
       "Creating a global hub for innovation and tourism."
-    ]
+    ],
+    highlightColor: "gold"
   },
   {
     id: "phase-4",
@@ -51,7 +52,8 @@ const phases = [
       "Building infrastructure for off-world living.",
       "Democratizing access to space for innovators and researchers.",
       "Ensuring the long-term survival and expansion of humanity."
-    ]
+    ],
+    highlightColor: "accent"
   }
 ];
 
@@ -59,7 +61,7 @@ export default function RoadmapPage() {
   return (
     <div className="container mx-auto max-w-6xl px-4 py-16 sm:py-24">
       <div className="text-center mb-16">
-        <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl font-headline mb-4">
+        <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl font-headline text-accent mb-4">
           Our Roadmap to a Type 3 Civilization
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground">
@@ -75,8 +77,14 @@ export default function RoadmapPage() {
             <div key={phase.id} id={phase.id} className="relative flex items-center md:items-stretch">
               <div className={`flex w-full items-center justify-between flex-col md:flex-row ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
                 <div className="w-full md:w-5/12">
-                  <div className="rounded-lg bg-card/50 backdrop-blur-sm border border-border/50 p-6 shadow-lg shadow-primary/10">
-                    <h3 className="mb-3 text-2xl font-bold text-primary font-headline">{phase.phase}: {phase.title}</h3>
+                  <div className={`rounded-lg bg-card/50 backdrop-blur-sm border p-6 shadow-lg ${
+                    phase.highlightColor === 'accent' ? 'border-accent shadow-accent/20' : 
+                    phase.highlightColor === 'gold' ? 'border-[#FFD700] shadow-[#FFD700]/20' : 'border-border/50 shadow-primary/10'
+                  }`}>
+                    <h3 className={`mb-3 text-2xl font-bold font-headline ${
+                      phase.highlightColor === 'accent' ? 'text-accent' : 
+                      phase.highlightColor === 'gold' ? 'text-[#FFD700]' : 'text-primary'
+                    }`}>{phase.phase}: {phase.title}</h3>
                     <p className="mb-4 text-muted-foreground">{phase.description}</p>
                     <ul className="space-y-2 text-muted-foreground list-disc pl-5">
                       {phase.points.map((point, i) => (
@@ -88,7 +96,10 @@ export default function RoadmapPage() {
                 <div className="hidden md:block w-5/12"></div>
               </div>
 
-              <div className="absolute left-1/2 top-0 md:top-1/2 h-16 w-16 -translate-x-1/2 -translate-y-4 md:-translate-y-1/2 rounded-full border-4 border-primary bg-background flex items-center justify-center text-primary z-10">
+              <div className={`absolute left-1/2 top-0 md:top-1/2 h-16 w-16 -translate-x-1/2 -translate-y-4 md:-translate-y-1/2 rounded-full border-4 bg-background flex items-center justify-center z-10 ${
+                phase.highlightColor === 'accent' ? 'border-accent text-accent' : 
+                phase.highlightColor === 'gold' ? 'border-[#FFD700] text-[#FFD700]' : 'border-primary text-primary'
+              }`}>
                 {phase.icon}
               </div>
             </div>

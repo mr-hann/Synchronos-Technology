@@ -6,7 +6,7 @@ export default function AboutPage() {
   return (
     <div className="container mx-auto max-w-5xl px-4 py-16 sm:py-24">
       <section className="text-center mb-16">
-        <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl font-headline mb-4">
+        <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl font-headline text-accent mb-4">
           Our Story: From a Vision to a Civilization
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground">
@@ -17,7 +17,7 @@ export default function AboutPage() {
       <section className="mb-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <h2 className="text-3xl font-bold font-headline">The Kardashev Scale Inspiration</h2>
+            <h2 className="text-3xl font-bold font-headline text-secondary">The Kardashev Scale Inspiration</h2>
             <p className="text-muted-foreground leading-relaxed">
               Our mission is directly inspired by the Kardashev scale, a method of measuring a civilization's level of technological advancement based on the amount of energy it is able to use. We see the path from a Type 1 (planetary) to a Type 3 (galactic) civilization not as a distant dream, but as a tangible roadmap.
             </p>
@@ -38,20 +38,20 @@ export default function AboutPage() {
       </section>
 
       <section>
-        <h2 className="text-3xl font-bold font-headline text-center mb-12">Our Foundational Philosophy</h2>
+        <h2 className="text-3xl font-bold font-headline text-center text-accent mb-12">Our Foundational Philosophy</h2>
         <div className="grid md:grid-cols-3 gap-8">
           <PhilosophyCard
-            icon={<Lightbulb className="h-8 w-8 text-primary" />}
+            icon={<Lightbulb className="h-8 w-8 text-secondary" />}
             title="Innovation"
             description="We relentlessly pursue breakthrough technologies that solve fundamental challenges and create new possibilities for humanity."
           />
           <PhilosophyCard
-            icon={<Target className="h-8 w-8 text-primary" />}
+            icon={<Target className="h-8 w-8 text-secondary" />}
             title="Accessibility"
             description="We believe the future should be for everyone. Our goal is to democratize access to advanced technology, from web development to space travel."
           />
           <PhilosophyCard
-            icon={<ShieldCheck className="h-8 w-8 text-primary" />}
+            icon={<ShieldCheck className="h-8 w-8 text-secondary" />}
             title="Sustainability"
             description="A thriving future requires a healthy home planet. We are committed to developing and deploying renewable energy and sustainable systems at a global scale."
           />
@@ -67,7 +67,7 @@ function PhilosophyCard({ icon, title, description }: { icon: React.ReactNode; t
       <CardHeader className="flex justify-center items-center mb-4">
         {icon}
       </CardHeader>
-      <CardTitle className="mb-2 font-headline">{title}</CardTitle>
+      <CardTitle className="mb-2 font-headline text-primary">{title}</CardTitle>
       <CardContent>
         <p className="text-muted-foreground">{description}</p>
       </CardContent>
