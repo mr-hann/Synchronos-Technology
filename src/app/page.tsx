@@ -102,7 +102,7 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="space-y-4">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl font-headline text-accent">About Synchronos</h2>
-                <p className="text-lg text-muted-foreground md:text-xl/relaxed">
+                <p className="text-base sm:text-lg text-muted-foreground md:text-xl/relaxed">
                   Synchronos Technology was born from a singular, audacious idea: to guide humanity's evolution from a planetary species to a galactic civilization. Our mission is directly inspired by the Kardashev scale, a method of measuring a civilization's level of technological advancement.
                 </p>
                  <Button asChild size="lg" variant="link" className="px-0 text-primary hover:text-secondary">
