@@ -12,19 +12,12 @@ import { z } from 'zod';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
 const contactFormSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
   email: z.string().email({ message: "Please enter a valid email address." }),
   subject: z.string().min(5, { message: "Subject must be at least 5 characters." }),
   message: z.string().min(10, { message: "Message must be at least 10 characters." }),
-});
-
-const communityFormSchema = z.object({
-  fullName: z.string().min(2, { message: "Full name must be at least 2 characters." }),
-  email: z.string().email({ message: "Please enter a valid email address." }),
-  interest: z.enum(["training", "incubation", "mentorship"]),
 });
 
 export default function Home() {
@@ -39,21 +32,7 @@ export default function Home() {
     },
   });
 
-  const communityForm = useForm<z.infer<typeof communityFormSchema>>({
-    resolver: zodResolver(communityFormSchema),
-    defaultValues: {
-      fullName: "",
-      email: "",
-      interest: "training",
-    },
-  });
-
   function onContactSubmit(values: z.infer<typeof contactFormSchema>) {
-    console.log(values);
-    // Handle form submission
-  }
-
-  function onCommunitySubmit(values: z.infer<typeof communityFormSchema>) {
     console.log(values);
     // Handle form submission
   }
@@ -64,14 +43,14 @@ export default function Home() {
         <section className="relative h-[80vh] min-h-[500px] flex items-center justify-center text-center">
           <div className="absolute inset-0 z-0">
              <Image 
-                src="https://picsum.photos/1920/1080"
+                src="https://storage.googleapis.com/aall-demos/gene-editing/hero-original.jpg"
                 alt="Futuristic cityscape"
                 fill
                 quality={100}
                 className="object-cover opacity-20"
                 data-ai-hint="futuristic cityscape"
              />
-             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-muted to-background"></div>
+             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background"></div>
           </div>
           <div className="container relative z-10 px-4 md:px-6">
             <div className="mx-auto max-w-4xl space-y-6">
@@ -179,7 +158,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-3 gap-8 mb-24">
+            <div className="grid lg:grid-cols-3 gap-8 mb-12">
               <CommunityCard
                 icon={<Code className="h-8 w-8 text-secondary" />}
                 title="Technology Training"
@@ -195,71 +174,6 @@ export default function Home() {
                 title="Mentorship Network"
                 description="Connect with industry veterans, visionary founders, and technology experts who can guide you on your journey."
               />
-            </div>
-
-            <div className="grid grid-cols-1 lg:max-w-xl mx-auto">
-              <Card className="bg-card/50 backdrop-blur-sm border-border/50">
-                <CardHeader>
-                  <CardTitle className="font-headline text-3xl text-secondary">Become a Part of Synchronos</CardTitle>
-                  <CardDescription>Fill out the form below to express your interest in our programs.</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <Form {...communityForm}>
-                    <form onSubmit={communityForm.handleSubmit(onCommunitySubmit)} className="space-y-8">
-                      <FormField
-                        control={communityForm.control}
-                        name="fullName"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Full Name</FormLabel>
-                            <FormControl>
-                              <Input placeholder="John Doe" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      <FormField
-                        control={communityForm.control}
-                        name="email"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Email</FormLabel>
-                            <FormControl>
-                              <Input placeholder="you@example.com" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      <FormField
-                        control={communityForm.control}
-                        name="interest"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>I am interested in...</FormLabel>
-                            <Select onValueChange={field.onChange} defaultValue={field.value}>
-                              <FormControl>
-                                <SelectTrigger>
-                                  <SelectValue placeholder="Select a program" />
-                                </SelectTrigger>
-                              </FormControl>
-                              <SelectContent>
-                                <SelectItem value="training">Technology Training</SelectItem>
-                                <SelectItem value="incubation">Startup Incubation</SelectItem>
-                                <SelectItem value="mentorship">Mentorship</SelectItem>
-                              </SelectContent>
-                            </Select>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      <Button type="submit" className="w-full" variant="secondary">Submit Interest</Button>
-                    </form>
-                  </Form>
-                </CardContent>
-              </Card>
-
             </div>
           </div>
         </section>
@@ -370,5 +284,5 @@ function CommunityCard({ icon, title, description }: { icon: React.ReactNode; ti
       <h3 className="text-xl font-bold font-headline mb-2 text-primary">{title}</h3>
       <p className="text-muted-foreground">{description}</p>
     </Card>
-  )
+  );
 }

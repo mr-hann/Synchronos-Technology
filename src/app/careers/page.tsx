@@ -57,19 +57,21 @@ export default function CareersPage() {
       <div className="space-y-6">
         {jobOpenings.map((job, index) => (
           <Card key={index} className="bg-card/50 backdrop-blur-sm border-border/50 transition-all duration-300 hover:border-primary/50">
-            <CardHeader>
-              <CardTitle className="font-headline text-2xl text-secondary">{job.title}</CardTitle>
-              <CardDescription className="flex flex-wrap items-center gap-x-4 gap-y-2 pt-2">
-                <span className="flex items-center gap-1.5"><Briefcase className="h-4 w-4" /> {job.division}</span>
-                <span className="flex items-center gap-1.5"><MapPin className="h-4 w-4" /> {job.location}</span>
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="flex justify-between items-center">
-              <span className={`text-sm font-medium px-3 py-1 rounded-full ${job.highlight ? 'bg-[#FFD700] text-black' : 'bg-primary/10 text-primary'}`}>{job.type}</span>
-              <Button variant="ghost" className="text-secondary hover:text-secondary-foreground hover:bg-secondary">
-                Apply Now <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </CardContent>
+            <div className="p-6 flex flex-col sm:flex-row justify-between sm:items-center gap-4">
+              <div className='flex-1'>
+                <CardTitle className="font-headline text-2xl text-secondary mb-2">{job.title}</CardTitle>
+                <CardDescription className="flex flex-wrap items-center gap-x-4 gap-y-2 pt-2">
+                  <span className="flex items-center gap-1.5"><Briefcase className="h-4 w-4" /> {job.division}</span>
+                  <span className="flex items-center gap-1.5"><MapPin className="h-4 w-4" /> {job.location}</span>
+                </CardDescription>
+              </div>
+              <div className='flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-4 sm:mt-0'>
+                 <span className={`text-sm font-medium px-3 py-1 rounded-full ${job.highlight ? 'bg-[#FFD700] text-black' : 'bg-primary/10 text-primary'}`}>{job.type}</span>
+                <Button variant="ghost" className="text-secondary hover:text-secondary-foreground hover:bg-secondary">
+                  Apply Now <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </div>
+            </div>
           </Card>
         ))}
       </div>
