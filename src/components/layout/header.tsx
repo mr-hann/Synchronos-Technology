@@ -5,7 +5,8 @@ import { Menu } from 'lucide-react';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Logo } from '@/components/logo';
+
+import Image from 'next/image';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -24,7 +25,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-border/20 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 max-w-screen-2xl items-center justify-between mx-auto px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2">
-          <Logo className="h-10 w-auto" />
+          <Image src="/logo.png" alt="logo" width={50} height={50}/>
           <span className="font-bold text-lg font-headline">Synchronos Technology</span>
         </Link>
 
@@ -57,7 +58,7 @@ export default function Header() {
                 <SheetContent side="left">
                   <div className="flex flex-col gap-6 p-6">
                     <Link href="/" className="flex items-center gap-2" onClick={() => setIsMobileMenuOpen(false)}>
-                      <Logo className="h-10 w-auto" />
+                      <Image src="/logo.png" alt="logo" width={50} height={50}/>
                       <span className="font-bold text-lg font-headline">Synchronos Technology</span>
                     </Link>
                     <nav className="flex flex-col gap-4">

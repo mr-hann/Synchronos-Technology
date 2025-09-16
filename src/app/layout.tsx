@@ -4,6 +4,9 @@ import { Toaster } from '@/components/ui/toaster';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 
+
+
+
 export const metadata: Metadata = {
   title: 'Synchronos Technology',
   description: 'Driving Humanity Toward a Type 3 Civilization.',

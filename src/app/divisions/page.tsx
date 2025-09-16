@@ -7,42 +7,42 @@ const divisions = [
     name: 'Digital Innovation',
     icon: <Lightbulb className="h-8 w-8 text-secondary" />,
     description: 'Crafting the software and digital tools that form the backbone of modern society and enterprise.',
-    image: 'https://picsum.photos/600/400',
+    image: '/Digitals.png',
     aiHint: 'abstract code'
   },
   {
     name: 'IoT Systems',
     icon: <Waypoints className="h-8 w-8 text-secondary" />,
     description: 'Engineering the smart hardware and networks that connect our world, from individual devices to entire cities.',
-    image: 'https://picsum.photos/600/400',
+    image: '/iot.png',
     aiHint: 'iot network'
   },
   {
     name: 'Accessories',
     icon: <ShoppingCart className="h-8 w-8 text-secondary" />,
     description: 'Designing and producing innovative digital accessories and wearables that enhance daily life and integrate with our ecosystem.',
-    image: 'https://picsum.photos/600/400',
+    image: '/Accessories-.png',
     aiHint: 'wearable tech'
   },
   {
     name: 'Real Estate',
     icon: <Building className="h-8 w-8 text-secondary" />,
     description: 'Building the cities of tomorrow. Our smart cities are fully integrated, sustainable, and designed for human flourishing.',
-    image: 'https://picsum.photos/600/400',
+    image: '/Realestate.png',
     aiHint: 'smart city'
   },
   {
     name: 'Renewable Energy',
     icon: <Unplug className="h-8 w-8 text-[#FFD700]" />,
     description: 'Powering the future. We develop and scale clean energy solutions to create a sustainable, energy-abundant world.',
-    image: 'https://picsum.photos/600/400',
+    image: '/Renewable.png',
     aiHint: 'solar panels'
   },
   {
     name: 'Space Exploration',
     icon: <Rocket className="h-8 w-8 text-secondary" />,
     description: 'Expanding humanity\'s horizons. We build affordable and accessible technologies to make us a multi-planetary species.',
-    image: 'https://picsum.photos/600/400',
+    image: '/space.jpeg',
     aiHint: 'space exploration'
   },
 ];
@@ -63,11 +63,12 @@ export default function DivisionsPage() {
         {divisions.map((division) => (
           <Card key={division.name} className="flex flex-col overflow-hidden bg-card/50 backdrop-blur-sm border-border/50 transition-all duration-300 hover:shadow-2xl hover:shadow-secondary/20 hover:-translate-y-2">
             <div className="relative h-48 w-full">
-              <Image 
-                src={division.image} 
-                alt={division.name} 
-                fill 
-                className="object-cover"
+              <Image
+                src={division.image}
+                alt={division.name}
+                fill={true} // Image fills the parent div
+                objectFit="cover"
+                className="object-center"
                 data-ai-hint={division.aiHint}
               />
             </div>

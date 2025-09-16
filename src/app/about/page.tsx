@@ -27,7 +27,7 @@ export default function AboutPage() {
           </div>
           <div>
             <Image
-              src="https://storage.googleapis.com/aall-demos/gene-editing/hero-synchronos.jpg"
+              src="/hero-synchronos.jpeg"
               alt="A person looking up at a galaxy, symbolizing humanity's future in space."
               width={600}
               height={600}

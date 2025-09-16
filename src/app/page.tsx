@@ -42,8 +42,8 @@ export default function Home() {
       <main className="flex-1">
         <section className="relative h-[80vh] min-h-[500px] flex items-center justify-center text-center">
           <div className="absolute inset-0 z-0">
-             <Image 
-                src="https://storage.googleapis.com/aall-demos/gene-editing/hero-original.jpg"
+             <Image
+                src="/hero-original.jpeg"
                 alt="Futuristic cityscape"
                 fill
                 quality={100}
@@ -92,7 +92,7 @@ export default function Home() {
               </div>
                <div>
                 <Image
-                  src="https://storage.googleapis.com/aall-demos/gene-editing/hero-synchronos.jpg"
+                  src="/hero-synchronos.jpeg"
                   alt="A person looking up at a galaxy, symbolizing humanity's future in space."
                   width={600}
                   height={600}
@@ -156,6 +156,10 @@ export default function Home() {
               <p className="text-lg md:text-xl text-muted-foreground">
                 Be part of a movement that's building the future. We provide the tools, community, and support to help you grow.
               </p>
+              <span>These Communities are under modern technology digitals
+               <Image src="/modlogo.png" width={70} height={70} className="inline-block p-3 rounded-full" alt="modern tech logo"/>
+               </span>
+
             </div>
 
             <div className="grid lg:grid-cols-3 gap-8 mb-12">
@@ -163,16 +167,19 @@ export default function Home() {
                 icon={<Code className="h-8 w-8 text-secondary" />}
                 title="Technology Training"
                 description="Master cutting-edge web technologies through our hands-on programs and build the skills for a future-proof career."
+                href="https://discord.gg/PgEEYcDG"
               />
               <CommunityCard
                 icon={<Rocket className="h-8 w-8 text-secondary" />}
                 title="Startup Incubation"
                 description="Have a world-changing idea? We provide the resources, funding, and ecosystem to turn your startup into a success story."
+                href="https://discord.gg/pW7FvVhX"
               />
               <CommunityCard
                 icon={<Users className="h-8 w-8 text-secondary" />}
                 title="Mentorship Network"
                 description="Connect with industry veterans, visionary founders, and technology experts who can guide you on your journey."
+                href="https://discord.gg/VxEe3D8a"
               />
             </div>
           </div>
@@ -211,7 +218,7 @@ export default function Home() {
                 <div className="pt-4">
                   <h3 className="font-headline text-xl font-semibold mb-4 text-secondary">Follow Us</h3>
                   <div className="flex items-center gap-6">
-                    <Link href="#" aria-label="Facebook"><Facebook className="h-6 w-6 text-muted-foreground transition-colors hover:text-primary" /></Link>
+                    <Link href="https://www.facebook.com/synchronostechnology" aria-label="Facebook"><Facebook className="h-6 w-6 text-muted-foreground transition-colors hover:text-primary" /></Link>
                     <Link href="#" aria-label="Twitter"><Twitter className="h-6 w-6 text-muted-foreground transition-colors hover:text-secondary" /></Link>
                     <Link href="#" aria-label="Instagram"><Instagram className="h-6 w-6 text-muted-foreground transition-colors hover:text-accent" /></Link>
                     <Link href="#" aria-label="LinkedIn"><Linkedin className="h-6 w-6 text-muted-foreground transition-colors hover:text-primary" /></Link>
@@ -275,7 +282,7 @@ function ContactInfo({ icon, title, content, href }: { icon: React.ReactNode; ti
   );
 }
 
-function CommunityCard({ icon, title, description }: { icon: React.ReactNode; title:string; description:string; }) {
+function CommunityCard({ icon, title, description,href }: { icon: React.ReactNode; title:string; description:string;href?: string;}) {
   return (
     <Card className="text-center p-8 bg-card/50 backdrop-blur-sm border-border/50">
       <div className="flex justify-center items-center mb-4">
@@ -283,6 +290,9 @@ function CommunityCard({ icon, title, description }: { icon: React.ReactNode; ti
       </div>
       <h3 className="text-xl font-bold font-headline mb-2 text-primary">{title}</h3>
       <p className="text-muted-foreground">{description}</p>
+      <Button asChild size="lg" variant="secondary" className="hover:text-primary transition-colors">
+      {href ? <Link href={href} className="my-3"> Join community</Link> : contentEl}
+      </Button>
     </Card>
   );
 }
